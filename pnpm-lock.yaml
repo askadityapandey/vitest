@@ -163,7 +163,7 @@ importers:
         version: 4.7.1
       unocss:
         specifier: ^0.61.0
-        version: 0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.3)
+        version: 0.61.0(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.3)
       unplugin-vue-components:
         specifier: ^0.27.2
         version: 0.27.2(rollup@4.18.0)(vue@3.4.31)
@@ -175,7 +175,7 @@ importers:
         version: 0.20.0(@vite-pwa/assets-generator@0.2.4)(vite@5.3.3)(workbox-build@7.1.0)(workbox-window@7.1.0)
       vitepress:
         specifier: ^1.2.3
-        version: 1.2.3(@types/node@20.14.9)(postcss@8.4.38)(search-insights@2.9.0)(typescript@5.5.2)
+        version: 1.2.3(@types/node@20.14.9)(postcss@8.4.39)(search-insights@2.9.0)(typescript@5.5.2)
       workbox-window:
         specifier: ^7.1.0
         version: 7.1.0
@@ -770,7 +770,7 @@ importers:
         version: 3.1.5
       unocss:
         specifier: ^0.61.0
-        version: 0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.3)
+        version: 0.61.0(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.3)
       unplugin-auto-import:
         specifier: ^0.17.6
         version: 0.17.6(@vueuse/core@10.11.0)(rollup@4.18.0)
@@ -907,8 +907,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1
       '@edge-runtime/vm':
-        specifier: ^3.2.0
-        version: 3.2.0
+        specifier: ^4.0.0
+        version: 4.0.0
       '@sinonjs/fake-timers':
         specifier: 11.1.0
         version: 11.1.0(patch_hash=trok5obk3l5tdlygozv34fknii)
@@ -3437,16 +3437,16 @@ packages:
       - '@algolia/client-search'
     dev: true
 
-  /@edge-runtime/primitives@4.1.0:
-    resolution: {integrity: sha512-Vw0lbJ2lvRUqc7/soqygUX216Xb8T3WBZ987oywz6aJqRxcwSVWwr9e+Nqo2m9bxobA9mdbWNNoRY6S9eko1EQ==}
+  /@edge-runtime/primitives@5.0.0:
+    resolution: {integrity: sha512-6EHOEnYFVvlLALXNacH0TsNR7lyCfy/58PJs8LMX3YtoR40ezGhh7kws1vuQCUf/QdJFNWN31SqESTzKmDkYLA==}
     engines: {node: '>=16'}
     dev: true
 
-  /@edge-runtime/vm@3.2.0:
-    resolution: {integrity: sha512-0dEVyRLM/lG4gp1R/Ik5bfPl/1wX00xFwd5KcNH602tzBa09oF7pbTKETEhR1GjZ75K6OJnYFu8II2dyMhONMw==}
+  /@edge-runtime/vm@4.0.0:
+    resolution: {integrity: sha512-XHaLSnCVa5Z1pyQcbSVNYSUFWi+y4DTyN8QANdfeDl7aVg6PK4UtCb6WRAjVoFSBsYU/0oqbm4rjb27lhkW6bQ==}
     engines: {node: '>=16'}
     dependencies:
-      '@edge-runtime/primitives': 4.1.0
+      '@edge-runtime/primitives': 5.0.0
     dev: true
 
   /@es-joy/jsdoccomment@0.43.1:
@@ -6014,7 +6014,7 @@ packages:
       sirv: 2.0.4
     dev: true
 
-  /@unocss/postcss@0.61.0(postcss@8.4.38):
+  /@unocss/postcss@0.61.0(postcss@8.4.39):
     resolution: {integrity: sha512-0ZHUeLYu057xL1vXg2coV62ly6zaCgYdA/oHKCMaU9KT0TI49+DE73GouHypRNM5YXfuUPfXhPGGUuFWkAbI1A==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -6026,7 +6026,7 @@ packages:
       css-tree: 2.3.1
       fast-glob: 3.3.2
       magic-string: 0.30.10
-      postcss: 8.4.38
+      postcss: 8.4.39
     dev: true
 
   /@unocss/preset-attributify@0.61.0:
@@ -15433,7 +15433,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.3):
+  /unocss@0.61.0(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.3):
     resolution: {integrity: sha512-7642v5tHpEpHO9dl9sqYbKT/Ri4X4lmGHhj/znE4uheEfXcptPPiZ1/hVmQVciHUSI8CnQBqDwkZuxNPDG3bTQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -15449,7 +15449,7 @@ packages:
       '@unocss/cli': 0.61.0(rollup@4.18.0)
       '@unocss/core': 0.61.0
       '@unocss/extractor-arbitrary-variants': 0.61.0
-      '@unocss/postcss': 0.61.0(postcss@8.4.38)
+      '@unocss/postcss': 0.61.0(postcss@8.4.39)
       '@unocss/preset-attributify': 0.61.0
       '@unocss/preset-icons': 0.61.0
       '@unocss/preset-mini': 0.61.0
@@ -15865,7 +15865,7 @@ packages:
       vite: 5.3.3(@types/node@20.14.9)
     dev: true
 
-  /vitepress@1.2.3(@types/node@20.14.9)(postcss@8.4.38)(search-insights@2.9.0)(typescript@5.5.2):
+  /vitepress@1.2.3(@types/node@20.14.9)(postcss@8.4.39)(search-insights@2.9.0)(typescript@5.5.2):
     resolution: {integrity: sha512-GvEsrEeNLiDE1+fuwDAYJCYLNZDAna+EtnXlPajhv/MYeTjbNK6Bvyg6NoTdO1sbwuQJ0vuJR99bOlH53bo6lg==}
     hasBin: true
     peerDependencies:
@@ -15890,7 +15890,7 @@ packages:
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 6.3.0
-      postcss: 8.4.38
+      postcss: 8.4.39
       shiki: 1.6.4
       vite: 5.3.3(@types/node@20.14.9)
       vue: 3.4.31(typescript@5.5.2)
