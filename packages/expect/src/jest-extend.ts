@@ -19,6 +19,72 @@ import {
 
 import { equals, iterableEquality, subsetEquality } from './jest-utils'
 import { wrapSoft } from './utils'
+import { isJestMockOrSpy } from './utils';
+
+export function toHaveBeenCalledBefore(
+  this: MatcherState,
+  actual: jest.Mock,
+  expected: jest.Mock,
+  failIfNoSecondInvocation = true,
+) {
+  const { printReceived, printExpected, matcherHint } = this.utils;
+
+  if (!isJestMockOrSpy(actual)) {
+    return {
+      pass: false,
+      message: () =>
+        `${matcherHint('.toHaveBeenCalledBefore')}\n\n` +
+        `Received value must be a mock or spy function\n\n` +
+        `Received: ${printReceived(actual)}`,
+    };
+  }
+
+  if (!isJestMockOrSpy(expected)) {
+    return {
+      pass: false,
+      message: () =>
+        `${matcherHint('.toHaveBeenCalledBefore')}\n\n` +
+        `Expected value must be a mock or spy function\n\n` +
+        `Expected: ${printExpected(expected)}`,
+    };
+  }
+
+  const firstInvocationCallOrder = actual.mock.invocationCallOrder;
+  const secondInvocationCallOrder = expected.mock.invocationCallOrder;
+  const pass = predicate(
+    firstInvocationCallOrder,
+    secondInvocationCallOrder,
+    failIfNoSecondInvocation,
+  );
+
+  return {
+    pass,
+    message: () =>
+      pass
+        ? `${matcherHint('.not.toHaveBeenCalledBefore')}\n\n` +
+          `Expected first mock to not have been called before second mock, but it was.\n\n` +
+          `First mock call order: ${printExpected(firstInvocationCallOrder)}\n` +
+          `Second mock call order: ${printReceived(secondInvocationCallOrder)}`
+        : `${matcherHint('.toHaveBeenCalledBefore')}\n\n` +
+          `Expected first mock to have been called before second mock, but it was not.\n\n` +
+          `First mock call order: ${printExpected(firstInvocationCallOrder)}\n` +
+          `Second mock call order: ${printReceived(secondInvocationCallOrder)}`,
+  };
+}
+
+const predicate = (
+  firstInvocationCallOrder: number[],
+  secondInvocationCallOrder: number[],
+  failIfNoSecondInvocation: boolean,
+) => {
+  if (firstInvocationCallOrder.length === 0) return false;
+  if (secondInvocationCallOrder.length === 0) return !failIfNoSecondInvocation;
+
+  const firstSmallest = Math.min(...firstInvocationCallOrder);
+  const secondSmallest = Math.min(...secondInvocationCallOrder);
+
+  return firstSmallest < secondSmallest;
+};
 
 function getMatcherState(
   assertion: Chai.AssertionStatic & Chai.Assertion,
