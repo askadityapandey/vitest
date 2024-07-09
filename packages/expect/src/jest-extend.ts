@@ -133,7 +133,11 @@ function JestExtendPlugin(
   matchers: MatchersObject,
 ): ChaiPlugin {
   return (_, utils) => {
-    Object.entries(matchers).forEach(
+        const allMatchers = {
+      ...matchers,
+      toHaveBeenCalledBefore,  
+    };
+    Object.entries(allMatchers).forEach(
       ([expectAssertionName, expectAssertion]) => {
         function expectWrapper(
           this: Chai.AssertionStatic & Chai.Assertion,
